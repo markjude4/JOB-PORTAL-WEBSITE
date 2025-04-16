@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobFinder | IT Job Central</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="logo.jpg" alt="Logo">
+        <span>JobFinder</span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="job.html">Jobs</a></li>
+          <li><a href="companies.html">Companies</a></li>
+          <li><a href="developers.html">Developer</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button class="login-btn">Login</button>
+        <button class="register-btn">Register</button>
+      </div>
+    </div>
+  </header>
+
+  <h1 class="centered">Top 10 IT Job Classifications</h1>
+
+  <div class="job-container">
+    <div class="job-box" onclick="showDescription('Software Developer')">
+      <h2>1. Software Developer</h2>
+    </div>
+    <div class="job-box" onclick="showDescription('Systems Analyst')">
+      <h2>2. Systems Analyst</h2>
+    </div>
+    <div class="job-box" onclick="showDescription('Network Administrator')">
+      <h2>3. Network Administrator</h2>
+    </div>
+    <div class="job-box" onclick="showDescription('Cybersecurity Specialist')">
+      <h2>4. Cybersecurity Specialist</h2>
+    </div>
+    <div class="job-box" onclick="showDescription('Database Administrator')">
+      <h2>5. Database Administrator</h2>
+    </div>
+    <div class="job-box" onclick="showDescription('IT Support Specialist')">
+      <h2>6. IT Support Specialist</h2>
+    </div>
+    <div class="job-box" onclick="showDescription('Web Developer')">
+      <h2>7. Web Developer</h2>
+    </div>
+    <div class="job-box" onclick="showDescription('Cloud Engineer')">
+      <h2>8. Cloud Engineer</h2>
+    </div>
+    <div class="job-box" onclick="showDescription('Data Analyst')">
+      <h2>9. Data Analyst</h2>
+    </div>
+    <div class="job-box" onclick="showDescription('DevOps Engineer')">
+      <h2>10. DevOps Engineer</h2>
+    </div>
+  </div>
+
+  <div id="job-description" class="job-description"></div>
+
+  <script>
+    function showDescription(jobTitle) {
+      let description = '';
+      let imageSrc = '';
+      switch (jobTitle) {
+        case 'Software Developer':
+          description = 'Responsible for designing, coding, testing, and maintaining software applications.';
+          imageSrc = 'software.jpg'; // Replace with your image URL
+          break;
+        case 'Systems Analyst':
+          description = 'Analyzes and improves computer systems, working with users and IT teams to design better systems.';
+          imageSrc = 'System.jpg'; // Replace with your image URL
+          break;
+        case 'Network Administrator':
+          description = 'Manages and maintains an organization\'s network infrastructure, ensuring connectivity and security.';
+          imageSrc = 'Network.jpg'; // Replace with your image URL
+          break;
+        case 'Cybersecurity Specialist':
+          description = 'Focuses on protecting systems and networks from cyber threats and security breaches.';
+          imageSrc = 'cybersecurity.jpg'; // Replace with your image URL
+          break;
+        case 'Database Administrator':
+          description = 'Responsible for maintaining and optimizing databases to ensure their integrity, security, and performance.';
+          imageSrc = 'database administration.jpg'; // Replace with your image URL
+          break;
+        case 'IT Support Specialist':
+          description = 'Provides technical support to users, helping them with hardware and software issues.';
+          imageSrc = 'IT.jpg'; // Replace with your image URL
+          break;
+        case 'Web Developer':
+          description = 'Designs and develops websites, ensuring they are user-friendly, responsive, and functional.';
+          imageSrc = 'web-developer.jpg'; // Replace with your image URL
+          break;
+        case 'Cloud Engineer':
+          description = 'Works with cloud computing systems and ensures that cloud resources and services are managed effectively.';
+          imageSrc = 'cloud-engineer.jpg'; // Replace with your image URL
+          break;
+        case 'Data Analyst':
+          description = 'Analyzes data to identify trends and insights, helping organizations make informed business decisions.';
+          imageSrc = 'data-analyst.jpg'; // Replace with your image URL
+          break;
+        case 'DevOps Engineer':
+          description = 'Works at the intersection of software development and IT operations to streamline and automate processes.';
+          imageSrc = 'devops-engineer.jpg'; // Replace with your image URL
+          break;
+        default:
+          description = 'Description not available.';
+      }
+
+      // Display description and image
+      const descriptionBox = document.getElementById('job-description');
+      descriptionBox.innerHTML = `
+        <h3>${jobTitle}</h3>
+        <p>${description}</p>
+        <img src="${imageSrc}" alt="${jobTitle}" class="job-image">
+      `;
+      descriptionBox.style.display = 'block';
+    }
+  </script>
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 IT Job Central. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="home.html">Home</a>|
+        <a href="companies.html">Companies</a>|
+        <a href="developers.html">Developers</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

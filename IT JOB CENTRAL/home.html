@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobFinder | IT Job Central</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="logo.jpg" alt="Logo">
+        <span>JobFinder</span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="job.html">Jobs</a></li>
+          <li><a href="companies.html">Companies</a></li>
+          <li><a href="developers.html">Developer</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button class="login-btn">Login</button>
+        <button class="register-btn">Register</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="overlay"></div>
+    <img class="hero-bg" src="background.jpg" alt="Job Portal Image">
+    <div class="hero-content">
+      <h1>Find Your Dream Job Today!</h1>
+      <p>Explore thousands of job listings from top companies across the world.</p>
+      <div class="search-bar">
+        <input type="text" id="job-title" placeholder="Job title or keyword">
+        <input type="text" id="location" placeholder="Location">
+        <button onclick="searchJobs()">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>🔍 Easy Search</h3>
+      <p>Find jobs that suit your interests and skills quickly.</p>
+    </div>
+    <div class="feature">
+      <h3>🏢 Top Companies</h3>
+      <p>Get hired by the best companies around the world.</p>
+    </div>
+    <div class="feature">
+      <h3>📄 Resume Builder</h3>
+      <p>Create a professional resume with ease.</p>
+    </div>
+    <div class="feature">
+      <h3>💼 Career Advice</h3>
+      <p>Tips and guides to boost your career journey.</p>
+    </div>
+  </section>
+
+  <!-- Login Form -->
+  <div id="loginForm" class="popup">
+    <span class="close-btn" onclick="closePopup('loginForm')">×</span>
+    <h2>Login</h2>
+    <input type="text" placeholder="Email" />
+    <input type="password" placeholder="Password" />
+    <button>Submit</button>
+    <p><a href="#">Forgot Password?</a></p> <!-- Forgot Password link -->
+  </div>
+
+  <!-- Register Form -->
+  <div id="registerForm" class="popup">
+    <span class="close-btn" onclick="closePopup('registerForm')">×</span>
+    <h2>Register</h2>
+    <input type="text" placeholder="Full Name" />
+    <input type="email" placeholder="Email" />
+    <input type="password" placeholder="Password" />
+    <button>Submit</button>
+  </div>
+
+  <script>
+    const loginBtn = document.querySelector('.login-btn');
+    const registerBtn = document.querySelector('.register-btn');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+
+    loginBtn.addEventListener('click', () => {
+      const isLoginVisible = loginForm.style.display === 'block';
+      loginForm.style.display = isLoginVisible ? 'none' : 'block';
+      registerForm.style.display = 'none';
+    });
+
+    registerBtn.addEventListener('click', () => {
+      const isRegisterVisible = registerForm.style.display === 'block';
+      registerForm.style.display = isRegisterVisible ? 'none' : 'block';
+      loginForm.style.display = 'none';
+    });
+
+    function closePopup(formId) {
+      document.getElementById(formId).style.display = 'none';
+    }
+
+    function searchJobs() {
+      const title = document.getElementById('job-title').value;
+      const location = document.getElementById('location').value;
+      alert(`Searching jobs for: ${title} in ${location}`);
+    }
+  </script>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2025 JobFinder. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="job.html">Job</a>|
+      <a href="companies.html">Companies</a>|
+      <a href="developers.html">Developers</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
